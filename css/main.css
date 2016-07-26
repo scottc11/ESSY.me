@@ -1,11 +1,11 @@
 /*
 COLORS
 
-rgb(62, 62, 65)
-rgb(18, 246, 156)
-rgb(65, 248, 102)
-rgb(146, 245, 47)
-#6ba833
+#3e3e41
+#12f69c
+#41f966
+#92f52f
+#6BA833
 */
 
 body {
@@ -60,7 +60,7 @@ h1 {
 }
 
 .color-accent {
-  color: rgb(146, 245, 47);
+  color: #92f52f;
 }
 
 
@@ -99,4 +99,66 @@ h1 {
   box-shadow: 0 0 140px rgba(47, 52, 59, 1);
   -moz-box-shadow: 0 0 140px rgba(47, 52, 59, 1);
   -webkit-box-shadow: 0 0 140px rgba(47, 52, 59, 1);
+}
+
+/*****************************/
+/******** BUTTONS ************/
+
+.projects-open-button {
+  position: fixed;
+  display: block;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  margin-left: 8px;
+  top: 40%;
+  left: 0;
+  text-shadow: 3px 0 10px rgba(0,0,0,0.8);
+  transition: left 1s ease;
+}
+
+.projects-open-button ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.projects-open-button ul span {
+  color: #92f52f;
+  line-height: 200%;
+}
+
+.projects-open-button:hover { color: #92f52f; }
+.openButtonTransition { left: -30px; }
+
+/*****************************/
+
+.about-open-button {
+  position: fixed;
+  display: block;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  margin-right: 8px;
+  top: 40%;
+  right: 0;
+  text-shadow: -3px 0 10px rgba(0,0,0,0.8);
+  transition: right 1s ease;
+}
+
+.about-open-button:hover {color: #92f52f;}
+.aboutButtonTransition {right: -30px;}
+
+.about-open-button ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.about-open-button ul li {
+  margin: 3px 0 3px 0;
+}
+
+/* selecting the last three list items in ul */
+.about-open-button ul li:nth-child(6){
+  color: #92f52f;
+  line-height: 200%;
 }
