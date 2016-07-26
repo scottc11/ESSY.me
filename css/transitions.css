@@ -1,0 +1,9 @@
+
+.project-modal {
+  transition: all 1.0s ease;
+}
+
+.show-modal {
+  top: 0;
+  left: 0;
+}
