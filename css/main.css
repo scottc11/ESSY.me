@@ -14,12 +14,19 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+
+  font-family: "Lucida Console", monaco, monospace;
+
+}
+
+h1 {
+  font-size: 1.5em;
 }
 
 .header {
   /*background: rgb(62, 62, 65);*/
   height: auto;
-  border: 1px dashed white;
+  /*border: 1px dashed white;*/
 }
 
 .logo-container {
@@ -52,23 +59,36 @@ body {
   color: white;
 }
 
+.color-accent {
+  color: rgb(146, 245, 47);
+}
+
 
 
 
 /******* P5 SKETCH ********/
 
+.sketch-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 #homeSketchContainer {
-  position: absolute;
-  opacity: 0.6;
+  position: relative;
+  opacity: 0.7;
   box-sizing: content-box;
   border: 2px dashed black;
+
   width: 400px;
   height: 400px;
+
+
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+
   border-radius: 50%;
   border: 20px solid rgba(0,0,0, 0.2);
   box-shadow: 0 0 150px black;
