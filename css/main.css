@@ -1,0 +1,82 @@
+/*
+COLORS
+
+rgb(62, 62, 65)
+rgb(18, 246, 156)
+rgb(65, 248, 102)
+rgb(146, 245, 47)
+#6ba833
+*/
+
+body {
+  background-image: url('../img/background_image_alt.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  /*background: rgb(62, 62, 65);*/
+  height: auto;
+  border: 1px dashed white;
+}
+
+.logo-container {
+  text-align: center;
+}
+
+
+#logo-mark {
+  width: 75%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.name-container {text-align: center;}
+
+#scampbell {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.header-container {
+  text-align: center;
+}
+
+#heading {
+  text-align: center;
+  color: white;
+}
+
+
+
+
+/******* P5 SKETCH ********/
+
+#homeSketchContainer {
+  position: absolute;
+  opacity: 0.6;
+  box-sizing: content-box;
+  border: 2px dashed black;
+  width: 400px;
+  height: 400px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 20px solid rgba(0,0,0, 0.2);
+  box-shadow: 0 0 150px black;
+}
+
+#defaultCanvas0 {
+  border-radius: 50%;
+  box-shadow: 0 0 140px rgba(47, 52, 59, 1);
+  -moz-box-shadow: 0 0 140px rgba(47, 52, 59, 1);
+  -webkit-box-shadow: 0 0 140px rgba(47, 52, 59, 1);
+}
