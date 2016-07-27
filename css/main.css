@@ -112,6 +112,33 @@ h1 {
   color: #92F52F;
 }
 
+/*****************************/
+/******** SOCIAL MEDIA ICONS ************/
+
+.icons-row {
+  text-align: center;
+}
+
+.icons-container {
+  display: inline-block;
+  float: none;
+}
+
+.icon-container {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+}
+
+.icon {
+  width: 50px;
+  height: auto;
+}
+
+#github {}
+#linkedIn {}
+
+
 
 /*****************************/
 /******** BUTTONS ************/
