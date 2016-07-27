@@ -116,12 +116,14 @@ h1 {
 /******** SOCIAL MEDIA ICONS ************/
 
 .icons-row {
-  text-align: center;
+  margin-top: 100px;
 }
 
 .icons-container {
-  display: inline-block;
-  float: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: center;
 }
 
 .icon-container {
@@ -133,10 +135,17 @@ h1 {
 .icon {
   width: 50px;
   height: auto;
+  transition: all;
+}
+
+.icon:hover {
+  transform: scale(1.1);
 }
 
 #github {}
 #linkedIn {}
+#twitter {}
+#email {}
 
 
 
@@ -166,7 +175,10 @@ h1 {
   line-height: 200%;
 }
 
-.projects-open-button:hover { color: #92f52f; }
+.projects-open-button:hover {
+  color: #92f52f;
+  transform: scale(1.1);
+}
 .openButtonTransition { left: -30px; }
 
 /*****************************/
@@ -183,7 +195,10 @@ h1 {
   transition: right 1s ease;
 }
 
-.about-open-button:hover {color: #92f52f;}
+.about-open-button:hover {
+  color: #92f52f;
+  transform: scale(1.1);
+}
 .aboutButtonTransition {right: -30px;}
 
 .about-open-button ul {

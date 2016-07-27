@@ -1,0 +1,11 @@
+
+/*Change if the viewport is 480 pixels high or higher:*/
+@media screen and (min-height: 840px) {
+  .sketch-container {
+
+  }
+
+  .icons-container {
+    position: static;
+  }
+}
