@@ -23,16 +23,14 @@ h1 {
   font-size: 1.5em;
 }
 
-.header {
-  /*background: rgb(62, 62, 65);*/
-  height: auto;
-  /*border: 1px dashed white;*/
-}
-
 .logo-container {
   text-align: center;
 }
 
+.name-container {
+  text-align: center;
+  height: 80px;
+}
 
 #logo-mark {
   width: 75%;
@@ -41,13 +39,19 @@ h1 {
   margin-bottom: 10px;
 }
 
-.name-container {text-align: center;}
+
 
 #scampbell {
   width: 100%;
   height: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.centering-div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .header-container {

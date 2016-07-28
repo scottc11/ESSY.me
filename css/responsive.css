@@ -1,11 +1,23 @@
 
 /*Change if the viewport is 480 pixels high or higher:*/
-@media screen and (min-height: 840px) {
+@media screen and (min-height: 930px) {
   .sketch-container {
 
   }
 
   .icons-container {
     position: static;
+  }
+}
+
+@media screen and (max-height: 760px) {
+  .icon {
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .icon {
+    width: 30px;
   }
 }
