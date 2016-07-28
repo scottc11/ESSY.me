@@ -248,17 +248,27 @@ h5 {
   text-align: center;
 }
 
+
+
+.header-shell {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .projects-header {
   color: white;
   font-size: 2em;
+  text-shadow: 0 0 15px rgba(0,0,0,0.8);
 }
+
 
 .projects-container {
   text-align: center;
 }
 
-.project-preview-container {
 
+
+.project-preview-container {
   box-sizing: border-box;
   height: 300px;
   margin-top: 10px;
