@@ -6,6 +6,8 @@ COLORS
 #41f966
 #92f52f
 #6BA833
+
+Electric Blue - (135, 205, 255)
 */
 
 body {
@@ -307,6 +309,10 @@ h5 {
   color: white;
 }
 
-#project1-bg {
+#project-1-bg {
   background-image: url("../img/projects/kss-may-25th-first-show_1.jpg");
+}
+
+#project-2-bg {
+  background-image: url("../img/gifs/essy_drive_like_frequency_band_particles.gif");
 }
