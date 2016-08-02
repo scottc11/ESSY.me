@@ -34,7 +34,12 @@ h5 {
   font-family: "Lucida Console", monaco, monospace;
 }
 
+#home-page {
+}
 
+#header {
+  position: fixed;
+}
 
 /**************/
 
