@@ -17,25 +17,67 @@ body {
   background-position: center;
   background-attachment: fixed;
 
-  font-family: "Lucida Console", monaco, monospace;
+  font-family: 'Source Code Pro', monaco, monospace;
 
 }
 
 h1 {
   font-size: 1.5em;
-  font-family: "Lucida Console", monaco, monospace;
+  font-family: 'Source Code Pro', monaco, monospace;
 }
 
 h3 {
-  font-family: "Lucida Console", monaco, monospace;
+  font-family: 'Source Code Pro', monaco, monospace;
 }
 
 h5 {
-  font-family: "Lucida Console", monaco, monospace;
+  font-family: 'Source Code Pro', monaco, monospace;
+}
+
+.centering-div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/***** NAV *****/
+/***************/
+
+.nav-container {
+  height: 80px;
+  text-align: right;
+}
+
+.nav {
+  display: inline-block;
+  color: white;
+  list-style: none;
+  padding: 0;
+}
+
+.nav li {
+  display: inline-block;
+  font-size: 1.5em;
+  font-family: 'Source Code Pro';
+  margin: 0 20px 0 20px;
+  line-height: 100%;
+}
+
+.nav li a {
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  color: black;
+  background-color: none;
+  text-decoration: underline;
 }
 
 
-/**************/
+
+
+/***** HEADER *****/
+/******************/
 
 
 .logo-container {
@@ -63,11 +105,7 @@ h5 {
   margin-bottom: 10px;
 }
 
-.centering-div {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
+
 
 .header-container {
   text-align: center;

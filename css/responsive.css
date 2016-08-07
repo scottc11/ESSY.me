@@ -1,16 +1,70 @@
 
-/*Change if the viewport is 480 pixels high or higher:*/
-@media screen and (min-height: 930px) {
-  .sketch-container {
 
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+  .nav li:not(:last-child) {
+    display: none;
   }
 
-  .icons-container {
-    position: static;
+  #menu-hamburger {
+    display: block;
+  }
+
+  .article {
+    height: 300px;
+  }
+
+  .heading-stitch-divider {
+    background: none;
+  }
+
+  .video-container {
+    height: 300px;
+  }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  .video-container {
+    height: 260px;
   }
 }
 
-/*Bootstrap LG*/
-@media (min-width: 1200px) {
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
 
+}
+
+/* Custom, specific for footer */
+@media only screen and (max-width : 628px) {
+  .footer-banner:nth-child(odd) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width : 400px) {
+
+}
+
+/*Change if the viewport is 480 pixels high or higher:*/
+@media screen and (min-height: 930px) {
+  .icons-container {
+    position: static;
+  }
 }
