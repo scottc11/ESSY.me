@@ -221,9 +221,6 @@ pre {
 }
 
 .icons-container {
-  /*position: fixed;
-  bottom: 0;
-  right: 0;*/
   text-align: center;
 }
 
@@ -247,6 +244,17 @@ pre {
 #linkedIn {}
 #twitter {}
 #email {}
+
+/*#youtube .icon-container {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}*/
+
+#youtube .icon {
+  width: 100px;
+}
 
 
 
