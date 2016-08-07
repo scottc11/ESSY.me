@@ -22,23 +22,68 @@ body {
 }
 
 h1 {
-  font-size: 1.5em;
-  font-family: 'Source Code Pro', monaco, monospace;
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
 }
 
 h3 {
+  font-size: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Code Pro', monaco, monospace;
 }
 
-h5 {
-  font-family: 'Source Code Pro', monaco, monospace;
+
+a:hover {
+    color: rgb(135, 205, 255);
 }
+
+pre {
+  font-family: monospace;
+}
+
+/***** GLOBAL CLASSES *****/
+/**************************/
 
 .centering-div {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
+
+.horizontal-center {
+  text-align: center;
+}
+
+.color-accent-yellow {
+  color: #92f52f;
+}
+
+.color-accent-green {
+  color: #41f966;
+}
+
+.color-accent-peach {
+  color: #12f69c;
+}
+
+.color-accent-electric-blue {
+  color: #87cdff;
+}
+
+.color-accent-orange {
+  color: #6BA833;
+}
+
+.color-accent-grey {
+  color: #3e3e41;
+}
+
+
 
 /***** NAV *****/
 /***************/
@@ -117,9 +162,7 @@ h5 {
   text-shadow: 0 0 15px rgba(0,0,0,0.8);
 }
 
-.color-accent {
-  color: #92f52f;
-}
+
 
 
 

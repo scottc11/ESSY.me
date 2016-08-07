@@ -1,0 +1,258 @@
+
+<html>
+     <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+       <title></title>
+       <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+
+       <link rel="stylesheet" href="../css/normalize.min.css">
+       <link rel="stylesheet" href="../css/boilerplate.css">
+       <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap.min.css">
+       <link rel="stylesheet" href="../css/main.css">
+       <link rel="stylesheet" href="../css/project-page.css">
+       <link rel="stylesheet" href="../css/transitions.css">
+       <link rel="stylesheet" href="../css/responsive.css">
+
+       <!-- FONTS -->
+       <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,200' rel='stylesheet' type='text/css'>
+
+     </head>
+
+
+
+
+     <body>
+
+       <!-- HEADER -->
+       <section>
+         <div class="header container">
+
+           <div class="row">
+
+             <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-3 col-md-offset-0">
+
+               <div class="name-container">
+
+                 <div class="centering-div">
+                   <img id="scampbell" src="../img/scampbell.png" alt="Scott Campbell" />
+                 </div>
+
+               </div>
+
+             </div>
+
+             <div class="nav-container col-md-9">
+               <div class="centering-div">
+                 <ul class="nav">
+                   <li><a href="../index.html">Home</a></li>
+                   <li><a href="#">About</a></li>
+                 </ul>
+               </div>
+             </div>
+
+
+           </div>
+       </section>
+
+
+       <!-- PROJECT -->
+       <section>
+        <div class="container">
+
+          <div class="row">
+            <div class="project-container col-xs-12 col-md-8 col-md-offset-2">
+
+
+              <div class="project-header horizontal-center">
+                <h1><span class="color-accent-yellow">.: </span>PROJECT<span class="color-accent-yellow"> :.</span></h1>
+              </div>
+
+              <hr>
+
+              <div class="video-container">
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/MN_cfRW3QV4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+              </div>
+
+
+
+              <h2 class="project-page-title color-accent-electric-blue">Frequency Band Particals</h2>
+
+              <div class="project-description">
+                <p>
+                  <span class="color-accent-peach">Frequency Band Particles</span> is a personal project of mine geared towards the use of an audio analysis Algorithm.  The algorithm is referred to as the <span class="color-accent-peach">Frans Fourier Transform</span> - or more notably <span class="color-accent-peach">FFT</span>.  This algorithm is very common in audio processing programs but can also be used for building audio visualizations, such as this.
+                </p>
+
+                <p>
+                  This is one of the more basic audio visualizations I have done using the development enviroment <a class="color-accent-yellow" href="https://processing.org" target="_blank">Processing</a>. Essentially my code is assigning a <span class="color-accent-peach">Particle Class</span> to each frequency band available via FFT, and spreading it across the canvas. The FFT algorithm reads the amplitude of all the frequencies, and then scales that data into a pixel location on the canvas.  Processing works at 60 FPS, so for each frame; the code analyses all 512 frequency bands, and scales and assigns the amplitude of each frequency band to its respective Particle Class. Processing can really be powerful!
+                </p>
+
+                <p>
+                  Here is the code.
+                </p>
+
+              </div>
+
+              <h2 class="color-accent-electric-blue">code:</h2>
+
+              <!-- CODE BLOCK -->
+              <pre class="code-block color-accent-orange"><code>
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+
+// Declare Global objects to be used in setup(), draw(), and other funtions
+Minim minim;
+AudioPlayer player;
+FFT fft;
+BandParticle bandParticleDown;
+BandParticle bandParticleUp;
+
+int red = 0;
+int green = 0;
+int blue = 0;
+
+// create an array to hold all the particles.  One array for each type of particle.
+ArrayList<BandParticle> bpdArray = new ArrayList<BandParticle>();
+ArrayList<BandParticle> bpuArray = new ArrayList<BandParticle>();
+
+
+void setup() {
+  size(600, 400);
+  background(99, 99, 99);
+
+  minim = new Minim(this);
+  // 1024 is the buffer size.  FFT's like this size. Something about power-of-two.
+  player = minim.loadFile("Bass_Filtering_Sample.mp3", 1024);
+  player.loop();
+
+  fft = new FFT(player.bufferSize(), player.sampleRate());
+
+  //Setup up particle arrays (ArrayList)
+  // appends a particle object for each bandwidth to the end of an array.
+  for (int i = 0; i < fft.specSize(); i++) {
+    bpdArray.add(new BandParticle(color(173, 255, 147), i, fft.getBand(i), 2, 2, i));
+    bpuArray.add(new BandParticle(color(173, 255, 47), i, (fft.getBand(i) * -1), 4, 4, i));
+  }
+
+}
+
+void draw() {
+  // FADE EFFECT
+  // Instead of background(), draw rect() the size of the screen with an Opacity
+  fill(0);
+  rect(0, 0, width, height);
+
+
+  // perform a forward FFT on the samples in jingle's mix buffer,
+  // which contains the mix of both the left and right channels of the file
+  fft.forward(player.mix);
+
+  float tester = 0.0;
+
+  for (int i = 0; i < bpdArray.size(); i++) {
+
+    // Using the shape of a Sine Wave to amplify the FFT data to be more visible
+    float freqPer = (float)i/bpuArray.size();  // this is your 0.0 -> 1.0 range number
+    float sinFreqPer = sqrt(freqPer * 3.141592)*20; // this will give you half of a full sine wave
+    tester = sinFreqPer;
+
+    // Draw the particles Upwards
+    // The Y value gets multiplied by a sine wave
+    bpuArray.get(i).update(color(173, 255, 47), i, ((fft.getBand(i) * sinFreqPer)*-1 ), 4, 4, i);
+    //bpuArray.get(i).update(color(173, 255, 47), i, (float)Math.log(Math.log(fft.getBand(i)))*-1, 4, 4, i);
+    bpuArray.get(i).drawParticle();
+
+    // Draw the Reflection particles (downwards)
+    BandParticle part = bpdArray.get(i);
+    part.update(color(173, 255, 147), i, (fft.getBand(i) * sinFreqPer), 2, 2, i);
+    part.drawParticle();
+  }
+
+}
+
+
+
+class BandParticle {
+  // Class Properties
+  color particleColor;
+  float locX;
+  float locY;
+  float sizeX;
+  float sizeY;
+  int bandNumber;
+
+  // This is a constructor.  It is what gets called when you create an object of the class
+  BandParticle(color tempParticleColor, float tempLocX, float tempLocY, float tempSizeX, float tempSizeY, int tempBandNumber) {
+
+    particleColor = tempParticleColor;
+    locX = tempLocX + ((width - fft.specSize()) / 2);  // This centers the waveform horozontally
+    locY = tempLocY + (height / 2);  // This centers the waveform vertically
+    sizeX = tempSizeX;
+    sizeY = tempSizeY;
+    bandNumber = tempBandNumber;
+  }
+
+  // updates the parameters of particle.  Meant to be used in the Draw Loop
+  void update(color tempParticleColor, float tempLocX, float tempLocY, float tempSizeX, float tempSizeY, int tempBandNumber) {
+    particleColor = tempParticleColor;
+    locX = tempLocX + ((width - fft.specSize()) / 2);  // This centers the waveform horozontally
+    locY = tempLocY + (height / 2);  // This centers the waveform vertically
+    sizeX = tempSizeX;
+    sizeY = tempSizeY;
+    bandNumber = tempBandNumber;
+  }
+
+  // creating a method.  Must use 'void' if the method doesn't return anything.
+  void drawParticle() {
+
+
+    fill(particleColor);
+    noStroke();
+    ellipse(locX, locY, sizeX, sizeY);
+  }
+
+}
+              </code></pre>
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+       </section>
+
+
+
+
+
+       <section>
+
+         <!-- GOOGLE ANALYTICS -->
+         <script>
+             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+             ga('create', 'UA-81834164-1', 'auto');
+             ga('send', 'pageview');
+         </script>
+
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+         <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+         <script src="../libraries/bootstrap/js/bootstrap.min.js"></script>
+         <script language="javascript" type="text/javascript" src="../libraries/p5/p5.js"></script>
+
+
+         <script language="javascript" type="text/javascript" src="../js/transitions.js"></script>
+         <script src="../js/main.js"></script>
+       </section>
+
+     </body>
+ </html>

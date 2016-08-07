@@ -1,6 +1,25 @@
-.horizontal-center {
-  text-align: center;
+/*
+COLORS
+
+#3e3e41
+#12f69c
+#41f966
+#92f52f
+#6BA833
+
+Electric Blue - (135, 205, 255)
+*/
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
 }
+
 
 .project-container {
   margin-top: 50px;
@@ -11,10 +30,17 @@
   -webkit-box-shadow:  0 0 50px rgba(0,0,0,0.8);
 }
 
+
+.project-header h1{
+  color: white;
+  padding: 0 0 20px 0;
+}
+
+
 .video-container {
   height: 360px;  /*This will need to change for each screen*/
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .video-container iframe {
@@ -25,18 +51,23 @@
 	height: 100%;
 }
 
-/*.video-shell {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
+.project-page-title {
+  margin: 20px 0 20px 0;
 }
 
-.video-shell iframe, .video-shell object, .video-shell embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}*/
+.project-description {
+  color: white;
+  padding: 0 20px 0 20px;
+}
+
+.code-block {
+  max-height: 800px;
+  overflow: scroll;
+  margin: 20px 60px 20px 60px;
+  background-color: rgba(62, 62, 65, 0.75);
+}
+
+.code-block code {
+  white-space: pre;
+
+}
