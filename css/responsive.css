@@ -37,6 +37,10 @@
     height: 300px;
   }
 
+  .about-occupation h2 {
+    text-align: left;
+  }
+
 }
 
 /* Extra Small Devices, Phones */

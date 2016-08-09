@@ -22,11 +22,11 @@ body {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 h3 {
@@ -44,6 +44,16 @@ a:hover {
 
 pre {
   font-family: monospace;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
 }
 
 /***** GLOBAL CLASSES *****/
@@ -83,6 +93,9 @@ pre {
   color: #3e3e41;
 }
 
+.color-accent-white {
+  color: white;
+}
 
 
 /***** NAV *****/
