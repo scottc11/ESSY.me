@@ -69,6 +69,15 @@ hr {
   text-align: center;
 }
 
+.margin-spacer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.align-right {
+  text-align: right;
+}
+
 .color-accent-yellow {
   color: #92f52f;
 }
