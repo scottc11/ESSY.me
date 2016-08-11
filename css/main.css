@@ -59,7 +59,15 @@ hr {
 /***** GLOBAL CLASSES *****/
 /**************************/
 
+
+
 .centering-div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.vertical-center {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -105,6 +113,17 @@ hr {
 .color-accent-white {
   color: white;
 }
+
+
+
+
+
+#home-page {
+  display: none;
+}
+
+
+
 
 
 /***** NAV *****/
@@ -223,6 +242,10 @@ hr {
   -moz-box-shadow: 0 0 140px rgba(47, 52, 59, 1);
   -webkit-box-shadow: 0 0 140px rgba(47, 52, 59, 1);
 }
+
+
+
+
 
 /*****************************/
 /******** NAVBAR ************/

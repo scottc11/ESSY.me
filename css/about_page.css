@@ -1,10 +1,7 @@
 .about-container {
-  margin-top: 50px;
+  height: 100%;
   padding: 20px;
   color: white;
-  /*box-shadow: 0 0 50px rgba(0,0,0,0.8);
-  -moz-box-shadow:  0 0 50px rgba(0,0,0,0.8);
-  -webkit-box-shadow:  0 0 50px rgba(0,0,0,0.8);*/
 }
 
 
