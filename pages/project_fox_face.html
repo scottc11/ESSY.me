@@ -1,0 +1,388 @@
+
+<html>
+     <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+       <title></title>
+       <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+
+       <link rel="stylesheet" href="../css/normalize.min.css">
+       <link rel="stylesheet" href="../css/boilerplate.css">
+       <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap.min.css">
+       <link rel="stylesheet" href="../css/main.css">
+       <link rel="stylesheet" href="../css/project-page.css">
+       <link rel="stylesheet" href="../css/transitions.css">
+       <link rel="stylesheet" href="../css/responsive.css">
+
+       <!-- FONTS -->
+       <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,200' rel='stylesheet' type='text/css'>
+
+     </head>
+
+
+
+
+     <body>
+
+       <!-- HEADER -->
+       <section>
+         <div class="header container">
+
+           <div class="row">
+
+             <div class="nav-container col-xs-12">
+               <div class="centering-div">
+                 <ul class="nav">
+                   <li><a href="../index.html">Home</a></li>
+                   <li><a href="about_page.html">About</a></li>
+                 </ul>
+               </div>
+             </div>
+
+
+           </div>
+       </section>
+
+
+       <!-- PROJECT -->
+       <section>
+        <div class="container">
+
+          <div class="row">
+
+
+
+            <!-- SIDEBAR -->
+            <div class="sidebar-container col-xs-12 col-md-4">
+
+              <div class="project-info-container">
+                <div class="project-header horizontal-center">
+                  <h1>PROJECT</h1>
+                </div>
+
+                <hr>
+
+                <h3 class="margin-spacer color-accent-yellow">"Fox Face"</h3>
+
+                <h5 class="margin-spacer">April, 2016</h5>
+
+                <div class="project-technologies margin-spacer">
+                  <h4>Technologies</h4>
+
+                  <ul>
+                    <li class="color-accent-electric-blue">p5.js</li>
+                    <li class="color-accent-electric-blue">HTML & CSS</li>
+                  </ul>
+
+                </div>
+
+
+
+                <!-- SOCIAL MEDIA ICONS -->
+                <div class="icons-container">
+
+                  <h4>Project Links</h4>
+
+                  <div id="github" class="icon-container">
+                    <span><a href="https://github.com/scottc11/AnimalFaces" target="_blank"><img class="icon" src="../img/gitHub-mark-light-120px-plus.png" alt="" /></a></span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+            <div class="project-content col-xs-12 col-md-8 col-md-offset-4">
+
+              <div id="homeSketchContainer">
+
+              </div>
+
+
+              <div class="project-description">
+                <p>
+                  <span class="color-accent-peach">"Fox Face"</span>
+                </p>
+
+                <p>
+
+                </p>
+
+                <p>
+                  Here is the code.
+                </p>
+
+              </div>
+
+
+              <!-- CODE BLOCK -->
+              <h2 class="color-accent-electric-blue">code:</h2>
+
+              <pre class="code-block color-accent-orange"><code>
+var gravConst = 60;  // the gravity contstant increases the velocity speed
+
+var attractor; // object which attracts particles
+var attractorRange = 100;
+var attractorMass = 30; // the size (ie. mass) of the attractor will effect the gravitational pull
+var originMass = 75; // this value represents the gravitational pull when particle is returning to its origin (ie. the speed)
+
+var particleArray = [];
+
+
+var img;
+var backgroundImg;
+var pixelArray;
+
+// Be sure to initialize a server in order to load image
+function preload() {
+  // backgroundImg = loadImage("images/background_image_alt.jpg", function() {
+  //   console.log("load image success");
+  // }, function() {
+  //   console.log("load image failed");
+  // });
+
+  img = loadImage("../img/fox50.jpg", function() {
+    console.log("load image success");
+  }, function() {
+    console.log("load image failed");
+  });
+
+}
+
+
+function setup() {
+  var canvas = createCanvas(400, 400);
+  canvas.parent('homeSketchContainer');
+
+
+  // background(backgroundImg); // make the background 100% opaque
+
+  // loadPixels(); // must be called before accessing the pixels[] array
+
+  // instantiate attractor object
+  attractor = new Attractor(mouseX, mouseY, attractorMass);
+
+  // build array of particle objects for each pixel in img
+  // the gridx and gridy variables represent each pixel in the image
+  // the posX and posY variables represent the position of the partical objects scaled to the canvas dimensions
+  for (var gridX = 0; gridX < img.width; gridX++) {
+    for (var gridY = 0; gridY < img.height; gridY++) {
+      var tileWidth = width / img.width;
+      var tileHeight = height / img.height;
+      var posX = tileWidth * gridX;
+      var posY = tileHeight * gridY;
+      var pixelColor = img.get(gridX, gridY);
+      var greyscale = round(red(pixelColor)*0.222 + green(pixelColor)*0.707 + blue(pixelColor)*0.071);
+      // console.log(posX + ", " + posY + ": " + greyscale);
+      var size = 0.75 * sqrt(tileWidth*tileWidth*(1-greyscale/255.0));
+      particleArray.push(new Particle(posX, posY, size));
+    }
+  }
+}
+
+
+
+function draw() {
+
+  fill(27, 31, 40);
+  noStroke();
+  rect(0, 0, width, height);
+
+  attractor.location.x = mouseX;
+  attractor.location.y = mouseY;
+  // attractor.draw();
+
+  // updating the particles
+  for (var i = 0; i < particleArray.length; i++) {
+    var particle = particleArray[i];
+
+    // attract object if it is in given range of attractor
+    if (particle.getDistanceFromAttractor(attractor) < attractor.range) {
+      var force = attractor.attract(particle);
+      particle.applyForce(force);
+      particle.update();
+      particle.draw();
+    }
+
+    if (particle.getDistanceFromAttractor(attractor) > attractor.range) {
+      // particle.returnToOrigin();
+      // particle.update();
+      // particle.draw();
+
+
+
+      // when particle.location it greater than 5px away from particle.origin
+      if (particle.getDistanceFromOrigin() > 20) {
+        // gradually return particle to its origin.
+        particle.returnToOrigin();
+        particle.update();
+        particle.draw();
+      } else {
+        // when particle.location is within 5px of its .origin, set .location to .origin
+        particle.velocity.set(0, 0);
+        particle.location.set(particle.origin);
+        particle.update();
+        particle.draw();
+      }
+
+    }
+  }
+}
+
+
+
+// *********************************************
+//PARTICLE CLASS
+
+function Particle(_locX, _locY, _size, _name) {
+  this.name = _name;
+  this.location = new p5.Vector(_locX, _locY);
+  this.origin = new p5.Vector(_locX, _locY);
+  this.velocity = new p5.Vector(0.0, 0.0);
+  this.acceleration = new p5.Vector(0.0, 0.0);
+  this.size = _size;
+
+
+  this.draw = function() {
+    //WHITE ELLIPSE
+    if (this.size > 2.5) {
+      fill(255);
+      noStroke();
+      ellipse(this.location.x, this.location.y, this.size, this.size);
+    }
+  }
+
+  // Apply the given force returned from Attractor to the particles velocity
+  this.applyForce = function(force) {
+    this.velocity = force;
+  }
+
+  this.getDistanceFromAttractor = function(attractor) {
+    var forceDirection = p5.Vector.sub(attractor.location, this.location);
+    var distance = forceDirection.mag();
+    return distance;
+  }
+
+  this.getDistanceFromOrigin = function() {
+    var direction = p5.Vector.sub(this.origin, this.location);
+    var distanceFromOrigin = direction.mag();
+    return distanceFromOrigin;
+  }
+
+  this.returnToOrigin = function() {
+    // calculations for objects distance
+    var forceDirection = p5.Vector.sub(this.origin, this.location);
+    var distance = forceDirection.mag();
+
+
+    // the constrain() method will prevent unwanted effects when the object gets to close to the center of the attractor.
+    distance = constrain(distance, 40, 300);
+
+    // unsure what the pupurpose of normalize is, but it turns a vector into a number between 0.0 and 1.0 - kinda like map()
+    forceDirection.normalize();
+
+    // below is the equation for calculating the gravitational force of an object
+    var magnitude = (gravConst * originMass * this.size) / (distance * distance);
+    var force = forceDirection.mult(magnitude);
+
+    this.velocity = force;
+  }
+
+  this.update = function() {
+    this.velocity.add(this.acceleration);
+    this.location.add(this.velocity);
+  }
+
+}
+
+
+
+// *********************************************
+// ATTRACTOR CLASS
+
+function Attractor(_locX, _locY, _size) {
+  this.location = new p5.Vector(_locX, _locY);
+  this.size = _size;
+  this.range = attractorRange;
+
+  this.draw = function() {
+    fill(77, 0.2);
+    stroke(255);
+    ellipse(this.location.x, this.location.y, this.range*2, this.range*2);
+    stroke(255);
+    fill(44, 0.7);
+    smooth();
+    ellipse(this.location.x, this.location.y, this.size, this.size);
+  }
+
+  // Returns a Vector to be applied to the Particle location/veleocity
+  this.attract = function(obj) {
+
+    // calculations for objects distance
+    var forceDirection = p5.Vector.sub(this.location, obj.location);
+    var distance = forceDirection.mag();
+
+
+    // the constrain() method will prevent unwanted effects when the object gets to close to the center of the attractor.
+    distance = constrain(distance, 40, 300);
+
+    // unsure what the pupurpose of normalize is, but it turns a vector into a number between 0.0 and 1.0 - kinda like map()
+    forceDirection.normalize();
+
+    // below is the equation for calculating the gravitational force of an object
+    var magnitude = (gravConst * this.size * obj.size) / (distance * distance);
+    var force = forceDirection.mult(magnitude);
+
+    return force;  // p5.Vector
+  }
+
+}
+
+              </code></pre>
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+       </section>
+
+
+
+
+
+       <section>
+
+         <!-- GOOGLE ANALYTICS -->
+         <script>
+             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+             ga('create', 'UA-81834164-1', 'auto');
+             ga('send', 'pageview');
+         </script>
+
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+         <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+         <script src="../libraries/bootstrap/js/bootstrap.min.js"></script>
+         <script language="javascript" type="text/javascript" src="../libraries/p5/p5.js"></script>
+
+         <script language="javascript" type="text/javascript" src="../js/sketch.js"></script>
+         <script language="javascript" type="text/javascript" src="../js/transitions.js"></script>
+         <script src="../js/main.js"></script>
+       </section>
+
+     </body>
+ </html>

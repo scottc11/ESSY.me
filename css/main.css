@@ -290,12 +290,6 @@ hr {
 #twitter {}
 #email {}
 
-/*#youtube .icon-container {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 0;
-  margin-right: 0;
-}*/
 
 #youtube .icon {
   width: 100px;
@@ -448,4 +442,8 @@ hr {
 
 #project-2-bg {
   background-image: url("../img/gifs/essy_drive_like_frequency_band_particles.gif");
+}
+
+#project-3-bg {
+  background-image: url("../img/projects/foxface_preview.png");
 }
