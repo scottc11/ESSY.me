@@ -24,6 +24,8 @@ h4 {
   text-align: right;
 }
 
+
+
 .project-content {
   padding: 20px;
   color: white;
@@ -70,7 +72,7 @@ h4 {
 
 .project-description {
   color: white;
-  padding: 0 20px 0 20px;
+  padding: 20px 20px 20px 20px;
 }
 
 .code-block {

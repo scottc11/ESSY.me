@@ -103,14 +103,25 @@
 
               </div>
 
-
               <div class="project-description">
                 <p>
-                  <span class="color-accent-peach">"Fox Face"</span>
+                  <span class="color-accent-peach">“Fox Face”</span> is one of my first visualizations using the open source javascript library <a href="https://p5js.org/" target="_blank" class="color-accent-yellow">p5.js</a>.  p5.js is an extension of the <a href="https://processing.org/" target="_blank" class="color-accent-yellow">Processing</a> platform intended to allow programmers to display their work using modern web technologies.
                 </p>
 
                 <p>
+                  Being one of my more advanced visualizations, my code breaks up a <span class="color-accent-peach">50W by 50H image</span> file of a fox (or anything for that matter) and distributes each <span class="color-accent-peach">pixel</span> across a larger pixel area - which in this case is <span class="color-accent-peach">400W by 400H</span>.
+                </p>
 
+                <p>
+                  Each pixel extracted from the image is then re-visualized as an <span class="color-accent-peach">ellipse of varying sizes</span>.  The line of code below is what decides the size of each ellipse. It converts the <span class="color-accent-electric-blue">grayscale value</span> of each pixel from the image into a new variable which will in turn represent the <span class="color-accent-peach">size of each ellipse</span>.
+                </p>
+
+                <pre class="code-block color-accent-orange"><code>
+var size = 0.75 * sqrt(tileWidth*tileWidth*(1-greyscale/255.0));
+                </code></pre>
+
+                <p>
+                  The particle attraction when hovering the cursor over the image is based off logic from the book written by Daniel Shiffman <span class="color-accent-electric-blue">“The Nature of Code”</span>.  Essentially the code in my sketch uses Newton’s Second Law which states that <span class="color-accent-peach">“Force equals mass times acceleration”</span>.
                 </p>
 
                 <p>
@@ -119,9 +130,8 @@
 
               </div>
 
-
               <!-- CODE BLOCK -->
-              <h2 class="color-accent-electric-blue">code:</h2>
+              
 
               <pre class="code-block color-accent-orange"><code>
 var gravConst = 60;  // the gravity contstant increases the velocity speed

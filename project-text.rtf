@@ -1,16 +1,40 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
-{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;}
+{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red90\green155\blue39;\red47\green47\blue50;}
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 \
+\f0\b\fs24 \cf0 Frequency Band Particles
+\f1\b0 \
+\
 Frequency Band Particles is a personal project of mine geared towards the use of an audio analysis Algorithm.  The algorithm is referred to as the \'93Frans Fourier Transform\'94 - or more notably \'93FFT\'94.  This algorithm is very common in audio processing programs but can also be used for building audio visualizations, such as this.\
 \
 This is one of my more basic visualizations I have done. Essentially my code is assigning a Particle Class to each frequency band available via FFT, and spreading it across the canvas. The FFT algorithm reads the amplitude of all the frequencies, and then scales that data into a pixel location on the canvas.  Processing works at 60 FPS, so for each frame, the code analyses all 512 frequency bands, and scales and assigns the amplitude of each frequency band to its respective Particle Class. A lot going on there!\
 \
 Here is the code.\
 \
+\
+
+\f0\b Fox Face
+\f1\b0 \
+\
+\'93Fox Face\'94 is one of my first ventures using the open source p5.js javascript library.  p5 is an extension of the Processing platform intended to allow programmers to display their work using modern web technologies.\
+\
+Being one of my more advanced visualizations, my code breaks up a 50W by 50H image file of a fox (or anything for that matter) and distributes each pixel across a larger pixel area - which in this case is 400W by 400H. \
+\
+Each pixel extracted from the image is then re-visualized as an ellipse of varying sizes.  This line of code is what decides the size of each ellipse. It converts the grayscale value of each pixel from the image into a new variable which will in turn represent the size of each ellipse.  \
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 var size = 0.75 * sqrt(tileWidth*tileWidth*(1-greyscale/255.0));
+\f2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+The particle attraction when hovering the cursor over the image is based off logic from the book written by Daniel Shiffman \'93The Nature of Code\'94.  Essentially the code in my sketch uses Newton\'92s Second Law which states that \'93Force equals mass times acceleration\'94.\
 \
 ABOUT ME\
 \
