@@ -11,30 +11,37 @@ Electric Blue - (135, 205, 255)
 */
 
 body {
-  background-image: url('../img/background_image_alt.jpg');
+  background-image: url('../img/background_image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
 
   font-family: 'Source Code Pro', monaco, monospace;
+  /*font-family: 'Dosis', sans-serif;*/
 
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 3em;
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 2.5em;
 }
 
 h3 {
+  font-size: 2em;
+}
+
+h5 {
   font-size: 1.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Code Pro', monaco, monospace;
+  /*font-family: 'Source Code Pro', monaco, monospace;*/
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
 }
 
 
