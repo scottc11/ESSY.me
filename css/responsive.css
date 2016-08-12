@@ -11,7 +11,18 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+  .project-info-container {
+    position: static;
+    text-align: center;
+  }
 
+  .project-icons {
+    text-align: center;
+  }
+
+  .code-block {
+    margin: 20px 0 20px 0;
+  }
 }
 
 /* Small Devices, Tablets */
@@ -40,6 +51,8 @@
   .about-occupation h2 {
     text-align: left;
   }
+
+
 
 }
 
