@@ -11,7 +11,7 @@ h4 {
 .project-info-container {
   min-width: 300px;
   color: white;
-  position: fixed;
+  /*position: fixed;*/
   text-align: right;
 }
 
@@ -25,8 +25,6 @@ h4 {
   text-align: right;
 }
 
-
-
 .project-content {
   padding: 20px;
   color: white;
@@ -35,10 +33,33 @@ h4 {
   -webkit-box-shadow:  0 0 50px rgba(0,0,0,0.8);*/
 }
 
-
 .project-header h1{
   color: white;
   padding: 0 0 20px 0;
+}
+
+/*---------------------------*/
+/*         IMAGES           */
+/*---------------------------*/
+
+.project-image-container {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+.project-image-container img {
+  width: 100%;
+}
+
+.project-image {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
 }
 
 /******VIDEO******/

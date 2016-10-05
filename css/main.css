@@ -411,7 +411,6 @@ hr {
   margin-bottom: 10px;
   position: relative;
   box-shadow: 0 0 50px rgba(0,0,0,0.8);
-
   text-align: left;
   overflow: hidden;
 }
@@ -443,6 +442,10 @@ hr {
   color: white;
 }
 
+.tinted {
+  background-color: rgba(0, 0, 0, 0.83);
+}
+
 #project-1-bg {
   background-image: url("../img/projects/kss-may-25th-first-show_1.jpg");
 }
@@ -453,4 +456,12 @@ hr {
 
 #project-3-bg {
   background-image: url("../img/projects/foxface_preview.png");
+}
+
+/*using 'linear-gradient', you are able to add a tint to an image*/
+#project-4-bg {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ), url("../img/projects/polaris-systems-preview.png");
 }
