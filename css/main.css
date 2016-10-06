@@ -94,10 +94,12 @@ hr {
 
 .color-accent-yellow {
   color: #92f52f;
+  /*color: rgb(146, 245, 47);*/
 }
 
 .color-accent-green {
   color: #41f966;
+  /*color: rgb(65, 249, 102);*/
 }
 
 .color-accent-peach {
@@ -106,10 +108,12 @@ hr {
 
 .color-accent-electric-blue {
   color: #87cdff;
+  /*color: rgb(135, 205, 255);*/
 }
 
 .color-accent-orange {
   color: #6BA833;
+  /*color: rgb(107, 168, 51);*/
 }
 
 .color-accent-grey {

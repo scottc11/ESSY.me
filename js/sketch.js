@@ -128,7 +128,7 @@ function Particle(_locX, _locY, _size, _name) {
   this.draw = function() {
     //WHITE ELLIPSE
     if (this.size > 2.5) {
-      fill(255);
+      fill(135, 205, 255);
       noStroke();
       ellipse(this.location.x, this.location.y, this.size, this.size);
     }
