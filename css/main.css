@@ -44,7 +44,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-
 a:hover {
     color: rgb(135, 205, 255);
 }
@@ -446,7 +445,14 @@ hr {
   background-color: rgba(0, 0, 0, 0.83);
 }
 
-#project-1-bg {
+#manifesto-preview-bg {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ), url("../img/projects/manifesto-preview.png");
+}
+
+#kss-preview-bg {
   background-image: url("../img/projects/kss-may-25th-first-show_1.jpg");
 }
 
