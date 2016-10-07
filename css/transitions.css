@@ -1,7 +1,42 @@
+/*---------------------------*/
+/*   Start-up Transitions    */
+/*---------------------------*/
+
+/*.sketch-container {
+  opacity: 0;
+  -moz-transition: all 3s ease-out;
+  -webkit-transition: all 3s ease-out;
+  transition: all 3s ease-out;
+}
+
+.remove-opacity {
+  opacity: 1;
+}*/
 
 
-/*PROJECTS*/
 
+
+
+.button-transition {
+  -moz-transition: left 3s ease-out;
+  -webkit-transition: left 3s ease-out;
+  transition: left 3s ease-out;
+}
+
+.left-button-slide {
+  left: 0;
+}
+
+.right-button-slide {
+  right: 0;
+}
+
+
+
+
+/*---------------------------*/
+/*        Project Previews   */
+/*---------------------------*/
 
 /*Background zoom in / out*/
 .pro-pre-bg {
