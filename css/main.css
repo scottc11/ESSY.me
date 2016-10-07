@@ -11,15 +11,12 @@ Electric Blue - (135, 205, 255)
 */
 
 body {
-  background-image: url('../img/background_image_alt.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-
   font-family: 'Source Code Pro', monaco, monospace;
-  /*font-family: 'Dosis', sans-serif;*/
-
+  height:100vh;  /*make body height of browser*/
 }
 
 h1 {
@@ -125,37 +122,47 @@ hr {
 }
 
 
+/*---------------------------*/
+/*        LOADING STUFF      */
+/*---------------------------*/
 
+#body {
 
-
-#home-page {
-  /*display: none;*/
 }
 
-
-/*---------------------------*/
-/*        MODAL WINDOWS      */
-/*---------------------------*/
-
-.modal {
-	position: fixed;
+#page {
   display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#modal {
+	position: fixed;
+  display: block;
 	font-family: Arial, Helvetica, sans-serif;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba(0,0,0,0.8);
-	z-index: 99999;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
+	background: rgba(0,0,0,1);
+	z-index: 99998;
+	-webkit-transition: opacity 1s ease-in;
+	-moz-transition: opacity 1s ease-in;
+	transition: opacity 1s ease-in;
 	pointer-events: none;
 }
 
+.fade-out {
+  opacity: 0;
+}
 
-/***** NAV *****/
-/***************/
+
+/*---------------------------*/
+/* NAV? Is this even being used?      */
+/*---------------------------*/
 
 .nav-container {
   height: 80px;
