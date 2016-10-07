@@ -133,7 +133,25 @@ hr {
 }
 
 
+/*---------------------------*/
+/*        MODAL WINDOWS      */
+/*---------------------------*/
 
+.modal {
+	position: fixed;
+  display: none;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
 
 
 /***** NAV *****/
@@ -172,8 +190,9 @@ hr {
 
 
 
-/***** HEADER *****/
-/******************/
+/*---------------------------*/
+/*        HEADER             */
+/*---------------------------*/
 
 
 .logo-container {
@@ -192,16 +211,12 @@ hr {
   margin-bottom: 10px;
 }
 
-
-
 #scampbell {
   width: 100%;
   height: auto;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
-
 
 .header-container {
   text-align: center;
@@ -217,11 +232,12 @@ hr {
 
 
 
-
-/******* P5 SKETCH ********/
+/*---------------------------*/
+/*        P5 SKETCH          */
+/*---------------------------*/
 
 .sketch-container {
-  margin-top: 60px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -257,8 +273,9 @@ hr {
 
 
 
-/*****************************/
-/******** NAVBAR ************/
+/*---------------------------*/
+/*       NAVBAR              */
+/*---------------------------*/
 
 .navigation {
   text-align: center;
@@ -268,11 +285,14 @@ hr {
   color: #92F52F;
 }
 
-/*****************************/
-/******** SOCIAL MEDIA ICONS ************/
+
+
+/*---------------------------*/
+/*   Social Media Icons      */
+/*---------------------------*/
 
 .icons-row {
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .icons-container {
@@ -305,10 +325,9 @@ hr {
   width: 100px;
 }
 
-
-
-/*****************************/
-/******** BUTTONS ************/
+/*---------------------------*/
+/*         BUTTONS           */
+/*---------------------------*/
 
 .projects-open-button {
   position: fixed;
@@ -474,4 +493,21 @@ hr {
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ), url("../img/projects/polaris-systems-preview.png");
+}
+
+
+
+
+/*---------------------------*/
+/*         FOOTER           */
+/*---------------------------*/
+
+.footer-hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  text-align: center;
+  margin-bottom: 60px;
 }
