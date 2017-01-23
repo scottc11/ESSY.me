@@ -488,6 +488,10 @@ hr {
   background-image: url("../img/projects/kss-may-25th-first-show_1.jpg");
 }
 
+#esplanade-preview-bg {
+  background-image: url("../img/projects/esplanade/esplanade-preview.png");
+}
+
 #project-2-bg {
   background-image: url("../img/gifs/essy_drive_like_frequency_band_particles.gif");
 }

@@ -1,0 +1,189 @@
+
+<html>
+     <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+       <title></title>
+       <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+
+       <link rel="stylesheet" href="../css/normalize.min.css">
+       <link rel="stylesheet" href="../css/boilerplate.css">
+       <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap.min.css">
+       <link rel="stylesheet" href="../css/main.css">
+       <link rel="stylesheet" href="../css/project-page.css">
+       <link rel="stylesheet" href="../css/transitions.css">
+       <link rel="stylesheet" href="../css/responsive.css">
+
+       <!-- FONTS -->
+       <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,200' rel='stylesheet' type='text/css'>
+       <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+
+     </head>
+
+
+
+
+     <body>
+
+       <!-- HEADER -->
+       <section>
+         <div class="header container">
+
+           <div class="row">
+
+             <div class="nav-container col-xs-12">
+               <div class="centering-div">
+                 <ul class="nav">
+                   <li><a href="../index.html">Home</a></li>
+                   <li><a href="about_page.html">About</a></li>
+                 </ul>
+               </div>
+             </div>
+
+
+           </div>
+       </section>
+
+
+       <!-- PROJECT -->
+       <section>
+        <div class="container">
+
+          <div class="row">
+
+
+
+            <!-- SIDEBAR -->
+            <div class="sidebar-container col-xs-12 col-md-4">
+
+              <div class="project-info-container">
+                <div class="project-header horizontal-center">
+                  <h1>PROJECT</h1>
+                </div>
+
+                <hr>
+
+                <h3 class="margin-spacer color-accent-yellow">Esplanade Cleaners</h3>
+
+                <a href="http://esplanadecleaners.com/" target="_blank" >www.esplanadecleaners.com</a>
+
+                <h5 class="margin-spacer">October 2016</h5>
+
+                <div class="project-technologies margin-spacer">
+                  <h4>Technologies</h4>
+
+                  <ul>
+                    <li class="color-accent-electric-blue">Wordpress</li>
+                    <li class="color-accent-electric-blue">Bootstrap</li>
+                    <li class="color-accent-electric-blue">HTML/CSS</li>
+                    <li class="color-accent-electric-blue">PHP/MySQL</li>
+                    <li class="color-accent-electric-blue">Custom Wordpress Theme</li>
+                    <li class="color-accent-electric-blue">Git Version Control</li>
+                    <li class="color-accent-electric-blue">SSH Shell Access</li>
+                  </ul>
+
+                </div>
+
+
+
+                <!-- SOCIAL MEDIA ICONS -->
+                <div class="project-icons">
+
+                  <h4>Project Links</h4>
+
+                  <div id="github" class="icon-container">
+                    <span><a href="https://github.com/scottc11/EsplanadeTheme" target="_blank"><img class="icon" src="../img/gitHub-mark-light-120px-plus.png" alt="" /></a></span>
+                  </div>
+
+                  <div class="icon-container">
+                    <span><a href="http://esplanadecleaners.com/" target="_blank"><img class="icon" src="../img/internet-logo.png" alt="" /></a></span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+            <div class="project-content col-xs-12 col-md-8">
+
+              <div class="project-image-container">
+                <img src="../img/projects/esplanade/esplanade-preview.png" alt="" />
+              </div>
+
+
+              <div class="project-description">
+                <p>
+                  <span class="color-accent-green">Esplanade Cleaners</span> is a local dry cleaning and alterations company in the heart of the Esplanade, Toronto.
+                </p>
+
+                <p>
+                  This tiny shop has been a part of the Esplanade community for over 25 years, and when the owners came to me to build their website, they were very enthusiastic about creating an image for the business which would represent their loyalty to the esplanade community, as well as their services tailored the areas population demographic.
+                </p>
+
+                <p>
+                  One thing that I felt was important to display on the website was a collection of the clients <span class="color-accent-electric-blue">Google Reviews</span>.  To achieve this I had to build my own custom 'carousel-style' comments section which made use of the <span class="color-accent-green">Google Maps API</span>.
+                </p>
+
+                <p>
+                  What the mini-application does is retreive all the google reviews for esplanade cleaners using the owners 'business' ID (supplied by Google), and then parses the response into a readable <span class="color-accent-orange">javascript object</span> - which is then loaded into the websites display.  Have a look at the code <a href="https://github.com/scottc11/EsplanadeTheme/blob/master/js/google-maps-API.js" target="_blank">HERE</a>.
+                </p>
+
+                <h2 class="horizontal-center">Visit the Website</h2>
+
+                <a href="http://esplanadecleaners.com/" target="_blank"><h3 class="horizontal-center">www.esplanadecleaners.com</h3></a>
+
+              </div>
+
+              <div class="project-image col-xs-12 col-sm-6">
+                <img src="../img/projects/esplanade/esplanade-1.png" alt="" />
+              </div>
+
+              <div class="project-image col-xs-12 col-sm-6">
+                <img src="../img/projects/esplanade/esplanade-2.png" alt="" />
+              </div>
+
+            </div>
+
+          </div> <!-- row -->
+
+        </div> <!-- container -->
+
+       </section>
+
+
+
+
+
+       <section>
+
+         <!-- GOOGLE ANALYTICS -->
+         <script>
+             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+             ga('create', 'UA-81834164-1', 'auto');
+             ga('send', 'pageview');
+         </script>
+
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+         <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+         <script src="../libraries/bootstrap/js/bootstrap.min.js"></script>
+         <script language="javascript" type="text/javascript" src="../libraries/p5/p5.js"></script>
+
+
+         <script language="javascript" type="text/javascript" src="../js/transitions.js"></script>
+         <script src="../js/main.js"></script>
+       </section>
+
+     </body>
+ </html>
