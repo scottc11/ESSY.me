@@ -91,38 +91,16 @@ hr {
   text-align: right;
 }
 
-.color-accent-yellow {
-  color: #92f52f;
-  /*color: rgb(146, 245, 47);*/
-}
+.color-accent-yellow {color: #92f52f;}
+.color-accent-green {color: #41f966;}
+.color-accent-peach {color: #12f69c;}
+.color-accent-electric-blue {color: #87cdff;}
+.color-accent-orange {color: #6BA833;}
+.color-accent-grey {color: #3e3e41;}
+.color-accent-white {color: white;}
+.color-accent-black {color: black;}
 
-.color-accent-green {
-  color: #41f966;
-  /*color: rgb(65, 249, 102);*/
-}
-
-.color-accent-peach {
-  color: #12f69c;
-}
-
-.color-accent-electric-blue {
-  color: #87cdff;
-  /*color: rgb(135, 205, 255);*/
-}
-
-.color-accent-orange {
-  color: #6BA833;
-  /*color: rgb(107, 168, 51);*/
-}
-
-.color-accent-grey {
-  color: #3e3e41;
-}
-
-.color-accent-white {
-  color: white;
-}
-
+.bg-color-black {background-color: black;}
 
 /*---------------------------*/
 /*        LOADING STUFF      */
@@ -444,6 +422,7 @@ hr {
   box-shadow: 0 0 50px rgba(0,0,0,0.8);
   text-align: left;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .pro-pre-bg {
@@ -477,6 +456,13 @@ hr {
   background-color: rgba(0, 0, 0, 0.83);
 }
 
+#listplz-preview-bg {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url("../img/projects/listplz/my-wishlist-editing.png");
+}
+
 #manifesto-preview-bg {
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.6),
@@ -489,7 +475,10 @@ hr {
 }
 
 #esplanade-preview-bg {
-  background-image: url("../img/projects/esplanade/esplanade-preview.png");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ), url("../img/projects/esplanade/esplanade-preview.png");
 }
 
 #project-2-bg {
